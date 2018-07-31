@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--    <link rel="icon" href="../../../../favicon.ico">-->
+<!--    <link rel="stylesheet" href="/static/css/glyphicons.css" crossorigin="anonymous">-->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">-->
+   
+    <!-- Custom styles  -->
+    <link rel="stylesheet" href="/static/css/index2.css">
+
+<!--        <link href="form-validation.css" rel="stylesheet">-->
+    
+    <!--JS Scripts-->
+<!--    date-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
+
+    <script src="/static/js/country.js" type="text/javascript"></script>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
+    
+<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+
+    
+
+     
+    
+</head>
+<body class="" style="background-color:rgba(0,116,188,.7);" >
+   
+   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-grey border-bottom box-shadow" style="background-color: white">
+      <img class="my-2 mr-md-auto font-weight-normal col-md-3" src="/static/img/DHFLPramericaLogo.png" >
+      <nav class="my-2 my-md-0 mr-md-3">
+       <a class="btn btn-outline-primary" href="/ResumeForm">Resume</a>
+        
+        
+      </nav>
+      
+    </div>
+    
+    <hr/>
+    
+    <div class="container mb-5 " style="border: 8px solid  rgba(227,30,36) ;box-shadow: 0px 80px 80px rgba(227,30,36,.1); background-color: white">
+        <div class="py-1 mt-3 text-center">
+           
+            <h2>Candidate form</h2>       
+               
+        </div>
+
+        <div class="row">
+<!--           form main loop-->
+            <div class="col-md-8 order-md-1 offset-md-2" >
+              <hr class="mb-4">   
+              <h4 class="mb-3">Source Information</h4>
+              <form id="candidateForm" method="post" enctype=multipart/form-data  >
+                  <div class="d-block my-2"  id="source-radio">                     
+                      <div class="custom-control custom-radio d-inline-block pr-5 form-group">
+                        <input id="consultantRadio" value="Consultant" name="source" type="radio" class="custom-control-input" onclick="sourceradioCheck()" checked  >
+                        <label class="custom-control-label" for="consultantRadio">Consultant</label>
+                      </div>
+                      <div class="custom-control custom-radio d-inline-block pr-5 form-group">
+                        <input id="referralRadio" value="Referral" name="source" type="radio" class="custom-control-input" onclick="sourceradioCheck()" >
+                        <label class="custom-control-label" for="referralRadio">Internal Referral</label>
+                      </div>
+                      <div class="custom-control custom-radio d-inline-block pr-5 form-group">
+                        <input id="lineHRRadio" value="Line HR" name="source" type="radio" class="custom-control-input" onclick="sourceradioCheck()" >
+                        <label class="custom-control-label" for="lineHRRadio">Line HR</label>
+                      </div>
+                 </div>
+                 
+                <div class="row">                
+                  <div class="col-md-6 mb-1 form-group">
+                    <label for="RFHnumber">RFH Number<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" id="RFHnumber" name= "RFHnumber"  >
+                    <small class="text-muted"></small> 
+                  </div>              
+                </div>
+                
+                <div class="row">                
+                  <div class="col-md-6 mb-1 ">
+                   <div id="consultant_Name" class="form-group"  >
+                       <label for="consultantName">Consultant Name<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" id="consultantName" name="consultantName"  >
+                         <small class="text-muted"></small> 
+                   </div>
+                                      
+                   <div id="employee_Name" style="display: none;" class="form-group">
+                       <label for="employeeName">Employee Name<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" id="employeeName" name="employeeName" placeholder="" value=""  >
+                         <small class="text-muted"></small>                         
+                    </div>  
+                    
+
+                    <div id="HR_name" style="display: none;" class="form-group">
+                      <label for="HRname">Line HR Name<span style="color:red;">*</span></label>
+                      <input type="text" class="form-control" id="HRname" name="HRname" placeholder="" value=""  >
+                      <small class="text-muted"></small> 
+                   </div>                        
+                  </div> 
+                  <div class="col-md-6">
+                      <div id="employee_Code" style="display: none;" class="form-group">
+                       <label for="EmployeeCode">Employee Code<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" id="EmployeeCode" name="EmployeeCode" placeholder="" value="" >
+                         <small class="text-muted"></small> 
+                        </div>
+                        
+                    <div id="lineHR_Code" style="display: none;" class="form-group">
+                       <label for="HRCode">Line HR Code<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" id="HRCode" name="HRCode" placeholder="" value=""   >
+                         <small class="text-muted"></small>    
+                    </div>   
+                  </div>                      
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-6 mb-1 form-group">
+                    <label for="hiringFunction" class="col-form-label">Hiring Function<span style="color:red;">*</span></label>
+                    <select class="custom-select d-block w-100 form-control" id="hiringFunction" name="hiringFunction" > 
+                      <option value="" selected="selected">-- select one --</option>
+                      <option value="Defence">Defence</option>
+                      <option value="Impact">Impact</option>                      
+                    </select>   
+                    <small class="text-muted"></small>                    
+                  </div>
+
+                  <div class="col-md-6 mb-1 form-group">
+                    <label for="hiringLocation" class="col-form-label">Hiring Location<span style="color:red;">*</span></label>
+                    <select class="custom-select d-block w-100 form-control" name="hiringLocation" id="hiringLocation" ></select>
+                    <small class="text-muted"></small>    
+
+                    
+                  </div>
+
+                     <script>                    
+                            getCityTier();
+                           function getCityTier()
+                            {
+                                var city=[];
+                                $.ajax({
+                                            url: "/city",
+                                            dataType: "json", 
+                                            async:false,                       
+                                            type: "POST",
+                                            success: function(response) {
+                                                city=response.city;                                                
+                                            },
+                                            error: function(error) {
+                                                console.log(error);
+                                            }
+                                        });
+                                var cityElement = document.getElementById('hiringLocation');
+                                cityElement.length = 0; 
+                                cityElement.options[0] = new Option('--select city--', '');
+//                                cityElement.options[0].disabled=true;
+                                cityElement.selectedIndex = 0;
+                                for (var i = 0; i < city.length; i++)
+                                {
+                                    cityElement.options[cityElement.length] = new Option(city[i], city[i]);
+                                }
+
+                            }
+                    </script>
+                </div>
+                 <hr class="mb-4">
+                <h4 class="my-2">Candidate Information</h4>
+                
+                
+                
+                <div class="row">
+                 
+                  <div class="col-md-6 mb-1 form-group">
+                    <label for="cand_name">Full Name<span style="color:red;">*</span></label>
+                    <input type="text" class="form-control" id="cand_name" name ="cand_name" placeholder="" value="" >
+                    <small class="text-muted"></small>
+                     
+                  </div>
+                  
+               
+                  <div class="col-md-6 mb-3 form-group">
+                    <label for="DOB">DOB<span style="color:red;">*</span></label>                    
+                    <input type ="text" id="DOB" name="DOB" placeholder="mm/dd/yyyy"  style="background-color: white;" class="form-control datepicker "  readonly />
+                    <small class="text-muted"></small>
+                    
+                   
+                    <script>
+                         $('#DOB').datepicker({
+                            uiLibrary: 'bootstrap4',
+                             maxDate: new Date(),
+                           
+                        });
+                       $('#DOB').datepicker()
+                        .on('change', function(e) {
+                         var mydate = new Date($("#DOB").val());
+                           console.log(mydate);
+                         var dobMonth=mydate.getMonth()+1;
+                         var dobDay= mydate.getDate();
+                         var dobYear = mydate.getFullYear();
+                         
+                         var currentDate = new Date();
+                         var currentMonth = currentDate.getMonth()+1;
+                         var currrentDay =  currentDate.getDate();
+                         var currentYear = currentDate.getFullYear();
+                         var errorDOB="Must be 18 years or older."
+                        var age = currentYear - dobYear;
+                        var m = currentMonth - dobMonth;
+                        if (m < 0 || (m === 0 && currrentDay < dobDay)) {
+                            age--;
+                        }
+                        
+                        if(age>=18)
+                        {
+                           $(this).parents('.form-group').addClass('has-success');
+                            $(this).addClass('form-control-success');
+                            $(this).parents('.form-group').removeClass('has-danger');
+                            $(this).removeClass('form-control-danger');
+                            $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                        }
+                        else
+                        {
+                            $(this).parents('.form-group').addClass('has-danger');
+                            $(this).addClass('form-control-danger');
+                            $(this).parents('.form-group').find('.text-muted').text(errorDOB);
+                            $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                            // `e` here contains the extra attributes
+                        });
+                       
+//                        $( "#datepicker" ).datepicker({  maxDate: new Date() })
+                        
+                    </script>  
+                    
+                  </div>  
+                
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <div class="mb-3">
+                          <label for="email">Email <span style="color:red;">*</span></label>
+                          <input type="text" class="form-control" id="email" name="email" placeholder="you@example.com" >
+                        <small class="text-muted"></small>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label class="md-5" for="Gender">Gender <span style="color:red;">*</span></label>
+                        <div class="d-block mt-1 gender-check" id="gender-check" >
+                           
+                            <div class="custom-control custom-radio pr-3 d-inline-block form-group">
+                                <input id="maleRadio" value="Male" name="gender" type="radio" class="custom-control-input" >
+                                <label class="custom-control-label" for="maleRadio">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio  pr-3 d-inline-block form-group">
+                                <input id="femaleRadio" value="Female" name="gender" type="radio" class="custom-control-input"  >
+                                <label class="custom-control-label" for="femaleRadio">Female</label>
+                            </div>                        
+                        </div>   
+                        <small class="text-muted"></small>             
+                  </div>
+                  
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <div class="mb-3">
+                          <label for="address">Address</label>
+                          <textarea class="form-control" id="address" name="address" placeholder="" ></textarea>                         
+                        </div>
+                        <small class="text-muted"></small> 
+                    </div>
+                    <div class="col-md-6 mb-3 form-group">
+                        <label for="mobile">Mobile<span style="color:red;">*</span></label>
+                        <input type="text" name="mobile" class="form-control" id="mobile" name="mobile" placeholder=""  >
+                          <small class="text-muted"></small> 
+                      </div> 
+                </div>
+<!--                end of row-->
+               
+                <div class="row">
+                 
+                  <div class="col-md-5 mb-3 form-group">
+                    <label for="country">Country<span style="color:red;">*</span></label>
+                     <select class="custom-select d-block w-100 form-control"  id="country" name="country" ></select>    
+                         <small class="text-muted"></small> 
+                        
+                  </div>
+                  
+                  <div class="col-md-4 mb-3 form-group">
+                    <label for="state">State<span style="color:red;">*</span></label>
+                    <select class="custom-select d-block w-100 form-control" name="state" id="state" ></select>    
+                     <small class="text-muted"></small>    
+                  </div>
+                  
+                  <div class="col-md-3 mb-3 form-group">
+                    <label for="zip">Zip<span style="color:red;">*</span></label>
+                    <input type="text" name="zip" class="form-control" id="zip" placeholder=""  >
+                     
+                  </div>                  
+                   <script >
+                    populateCountries("country", "state");
+                    </script>
+                </div>
+<!--                end of row-->
+                
+                <div class="row ">
+                  <div class="col-md-6 mb-1 form-group">  
+                    <label for="maritalStatus">Marital Status<span style="color:red;">*</span></label>
+                    <select class="custom-select d-block w-100 form-control" id="maritalStatus" name ="maritalStatus" >
+                      <option value="" selected="selected" >-- select one --</option>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>  
+                      <option value="Widowed" >Widowed</option>    
+                      <option value="Divorced" >Divorced</option> 
+                      <option value="Seperated" >Seperated</option>              
+                    </select>
+                    <small class="text-muted"></small>    
+                  </div>
+                   
+                    <div class="col-md-6 mb-1 form-group">
+                        <label for="dependants">No. of Financial Dependents<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" name="dependants" id="dependants" placeholder="" value="">
+                        <small class="text-muted"></small>    
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-1 form-group">
+                        <label for="aadhar">Aadhar Number<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" id="aadhar" name="aadhar" placeholder="" value="" >
+                       <small class="text-muted"></small>   
+                    </div>
+<!--                    do this afterwards-->
+                    <div class="col-md-6 mb-1 form-group">
+                        <label for="pan">PAN Number<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" id="pan" name="pan" placeholder="" value="" >
+                        <small class="text-muted"></small>   
+                    </div>
+                </div>
+                
+                 <hr class="mb-4">
+                    
+                <h4 class="my-2">Work Experience</h4>
+                    
+                         
+                <div class="row mb-2 ">
+                    <div class="col-md-5 mb-1 form-group">
+                        <label for="years">Number of Years<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" id="years" name="years" placeholder="" value="" >
+                        <small class="text-muted"></small> 
+                    </div>
+                    
+                    <div class="col-md-5 mb-1 form-group">
+                        <label for="months" >Number of Months<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control" id="months" name="months" placeholder="" value="">
+                         <small class="text-muted"></small> 
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                       
+                        <div class="d-block mt-1" id="CheckInsurance">
+                            <label class="md-5 mr-3"  style="margin-top: -15px;" for="insuranceCheck">Have you ever worked with an insurance company? <span style="color:red;">*</span></label>
+                            <div class="custom-control custom-radio pr-3 d-inline-block ">
+                                <input id="yesInsurance" value="Insurance" name="insuranceCheck" type="radio" class="custom-control-input" >
+                                <label class="custom-control-label" for="yesInsurance">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio  pr-3 d-inline-block">
+                                <input id="noInsurance" value="Non-Insurance" name="insuranceCheck" type="radio" class="custom-control-input" >
+                                <label class="custom-control-label" for="noInsurance">No</label>
+                            </div>                        
+                        </div>   
+                        <small class="text-muted"></small>                  
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">                       
+                        <div class="d-block mt-1" id="CheckArmy">
+                            <label class="md-5 mr-3"  style="margin-top: -15px;"for="ArmyCheck">Are you from an army background? <span style="color:red;">*</span></label>
+                            <div class="custom-control custom-radio pr-3 d-inline-block ">
+                                <input id="yesArmy" value="Army" name="ArmyCheck" type="radio" class="custom-control-input" >
+                                <label class="custom-control-label" for="yesArmy">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio  pr-3 d-inline-block">
+                                <input id="noArmy" value="Non-Army" name="ArmyCheck" type="radio" class="custom-control-input" >
+                                <label class="custom-control-label" for="noArmy">No</label>
+                            </div>             
+                        </div>   
+                        <small class="text-muted"></small> 
+                  </div>
+                </div>
+                
+                
+            <hr class="mb-4">                    
+            <h4 class="my-2">Previous Company Details </h4> 
+              <div class="companyWrap">    
+                 <div class="row">
+                  <div class="col-md-6 mb-1 form-group" >
+                    <label for="sector">Sector<span style="color:red;">*</span></label>
+                    <select class="custom-select d-block w-100 sel-sector form-control" name="sector[]" id="1" onchange="getSectorValue(this)" >
+                      <option value="" selected="selected">-- select one --</option>
+                      <option value="Agribusiness">Agribusiness/Food Systems</option>
+                      <option value="Aviation">Aviation</option>  
+                      <option value="Construction" >Construction</option> 
+                      <option value="Financial Institutions" >Financial Institutions   </option>
+                      <option value="Healthcare" >Healthcare</option> 
+                      <option value="Insurance" >Insurance</option> 
+                      <option value="Marine" >Marine</option>     
+                      <option value="Public Sector" >Public Sector</option> 
+                      <option value="Railway" >Railway</option>
+                      <option value="Technology" >Technology</option>  
+                    </select>
+                  <small class="text-muted"></small>   
+                  </div>
+                  
+                  <div class="col-md-6 mb-1 form-group"  >
+                    <label for="subSector">Sub Sector<span style="color:red;">*</span></label>
+                    <select class="custom-select d-block w-100 sub-sec form-control" name="subSector[]" id="subsectorDropdown1" disabled >
+                      <option value="" selected="selected" >-- select one --</option>
+                      <option value="Accidental">Accidental</option>
+                      <option value="Agriculture">Agriculture</option>  
+                      <option value="General" >General</option>    
+                      <option value="Health" >Health</option> 
+                      <option value="Life Insurance" >Life Insurance</option>    
+                      <option value="Travel" >Travel</option>  
+                      <option value="Other" >Other</option>             
+                    </select>
+                   <small class="text-muted"></small>   
+                  </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-1 form-group">
+                        <label for="companyName">Company Name<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control companyName" name="companyName[]" id="CompanyName1" >
+                        <small class="text-muted"></small>   
+                    </div>
+                    
+                    <div class="col-md-6 mb-1 form-group">
+                        <label for="designation" >Designation<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control designationName" name="designation[]" id="Designation1" >
+                       <small class="text-muted"></small>   
+                    </div>  
+                </div>
+                
+                
+                <div class="row">
+                  <div class="col-md-6 mb-3 form-group">
+                    <label for="startDate">Start Date<span style="color:red;">*</span></label>
+                    <input type="text" name="startDate[]" id="StartDate1" placeholder="mm/dd/yyyy"  style="background-color: white;" class="form-control datepicker " readonly />                    
+                    <small class="text-muted"></small>
+                  </div>  
+                  
+                  <div class="col-md-6 mb-3 form-group">
+                    <label for="endDate">End Date<span style="color:red;">*</span></label>
+                    <input type ="text" name="endDate[]" id="EndDate1"  placeholder="mm/dd/yyyy"  style="background-color: white;" class="form-control datepicker "  readonly   />                    
+                    <small class="text-muted"></small>   
+                  </div>
+                  
+                  
+                </div>
+                <div class="row"> 
+                     <div class="col-md-6 mb-1 form-group">
+                        <label for="salary" >Last Annual Drawn Salary<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control lastSalary" id="salary1" name="salary[]" placeholder="" value="" >
+                         <small class="text-muted"></small>   
+                    </div>  
+                </div>
+                
+                
+              </div>
+            <!--  end of company-wrap-->
+              <script>                  
+                        $("#StartDate1").datepicker({
+                            uiLibrary: 'bootstrap4',
+                            maxDate: new Date()
+                        });    
+                        $("#StartDate1").datepicker()
+                        .on('change', function(e)
+                        {
+                            var startdate= "#StartDate1";
+                            var start = new Date($(startdate).val());
+                            var missingDate="Please choose a date."
+                            if(start)
+                            {
+                               $(this).parents('.form-group').addClass('has-success');
+                                $(this).addClass('form-control-success');
+                                $(this).parents('.form-group').removeClass('has-danger');
+                                $(this).removeClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                            }
+                            else
+                            {
+                                $(this).parents('.form-group').addClass('has-danger');
+                                $(this).addClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').text(missingDate);
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                            }
+                        });
+                            
+                        $("#EndDate1").datepicker({uiLibrary: 'bootstrap4',maxDate: new Date()});    
+                        $("#EndDate1").datepicker()
+                        .on('change', function(e)
+                        {
+                            var endDate= "#EndDate1";
+                            var end = new Date($(endDate).val());
+                            var missingDate="Please choose a date."
+                           
+                            if(end)
+                            {
+                               $(this).parents('.form-group').addClass('has-success');
+                                $(this).addClass('form-control-success');
+                                $(this).parents('.form-group').removeClass('has-danger');
+                                $(this).removeClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                            }
+                            else
+                            {
+                                $(this).parents('.form-group').addClass('has-danger');
+                                $(this).addClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').text(missingDate);
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                            }
+                        });
+                    
+                    </script> 
+            <!--    company wrap ends-->                 
+                <button class="mt-2 add_company_button btn btn-outline-success"><i class="fas fa-plus-circle" style="font-size:20px;"></i>Add Fields</button> 
+                       
+                     
+                <hr class="mb-4">                    
+                <h4 class="my-2">Education Qualification </h4>     
+                <div class="qualification-wrapper">    
+                  <div class="qual-main">
+                      <div class="row">
+                        <div class="col-md-6 mb-1 form-group">
+                        <label for="sector">What is your educational qualification ?<span style="color:red;">*</span></label>
+                        <select class="custom-select d-block w-100 form-control sel-qualification" name="qualification[]" id="qualification1" onchange="" >
+                            <option value="" selected="selected" disabled="disabled">-- select one --</option>
+                            <option value="No formal education">No formal education</option>
+                            <option value="Primary education">Primary education</option>
+                            <option value="Secondary education">Secondary education or high school</option>
+                            <option value="Vocational qualification">Vocational qualification</option>
+                            <option value="GED">GED</option>                                
+                            <option value="Bachelor's degree">Bachelor's degree</option>
+                            <option value="Master's degree">Master's degree</option>
+                            <option value="Doctorate or higher">Doctorate or higher</option>
+                        </select>
+                        <small class="text-muted"></small> 
+                      </div>
+
+                      <div class="col-md-6 mb-1 form-group">
+                        <label for="yearOfCompletion">Year of Completion<span style="color:red;">*</span></label>
+                        <input type="text" class="form-control CompletionYear" name="yearOfCompletion[]" id="yearOfCompletion1">
+                        <small class="text-muted"></small> 
+                      </div>
+
+                        <div class="col-md-6 mb-1 form-group">
+                            <label for="specialisation">Specialization<span style="color:red;">*</span></label>
+                            <input type="text" class="form-control Specialisation" name="specialisation[]" id="specialisation1">
+                           <small class="text-muted"></small> 
+                        </div>
+                     </div> 
+                  </div>   
+                </div>
+                 <button class="mt-2 add_qualification_button btn btn-outline-success"><i class="fas fa-plus-circle" style="font-size:20px;"></i>Add Fields</button> 
+<!--                 qualification wrap ends-->
+                 
+                 
+                
+<!--
+                  <hr class="mb-4">                    
+                <h4 class="my-2">Certification</h4>    
+                <div class="certification-wrapper mt-4">                   
+                      <div class="certi-wrap-main">
+                          <div class="row">
+                          <div class="col-md-6 mb-1 form-group">
+                                <label for="yearOfCompletionCerti">Have you done any certification?</label>
+                                <input type="text" class="form-control" name="certification[]" id="certification" placeholder="" value=""  data-vindicate="format:alpha">
+                                <div><small class="form-control-feedback"></small></div>
+                          </div>
+                          <div class="col-md-6 mb-1 form-group">
+                                <label for="yearOfCompletionCerti">Year of Completion</label>
+                                <input type="text" class="form-control" name="yearOfCompletionCerti[]" id="yearOfCompletionCerti" placeholder="" value="" data-vindicate="format:numeric" >
+                                <div><small class="form-control-feedback"></small></div>
+                          </div>
+                      
+                     
+                        <div class="col-md-6 mb-1 form-group">
+                                <label for="specialisationCerti">Specialization</label>
+                                <input type="text" class="form-control" name="specialisationCerti[]" id="specialisationCerti" placeholder="" value="" data-vindicate="format:alpha" >
+                               <div><small class="form-control-feedback"></small></div>
+                        </div>
+                       </div>    
+                    </div>
+              </div>
+              <button class="add_certification_button ">Add More Fields</button>   
+-->
+  
+      
+
+            <!--  certification wrap ends-->
+                   
+                  <hr class="mb-4">
+                  
+                  <h4 class="mb-3">Upload Resume<span style="color:red;">*</span></h4>
+                    <div class="form-group col-xs-6">
+                        <input type="file"  class="file" id="resumeFile" name="resumeFile" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"  hidden>
+                        <div class="input-group ">
+                          <span class="input-group-btn">       
+                            <button class="browse btn btn-primary " type="button" style="border-top-right-radius: 0px;border-bottom-right-radius: 0px;"><i class="fas fa-upload"></i> Browse</button>
+                          </span>
+                          <input type="text" name='ResumeFile' id='resume' class="form-control " disabled placeholder="Upload File..." style="background-color: white;">      
+                        </div>
+                        <small class="text-muted"></small>   
+                  </div>
+<!--
+                   
+                    <div class="row mb-3">
+                        <div class=" col-md-6 col-sm-12 form-group">                
+                            <input type="file" name='ResumeFile' id='resume' class="form-control " accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"  />
+                            <small class="text-muted"></small>                            
+                        </div>
+                        
+                     </div>
+-->
+                     
+                 <hr class="mb-4">
+                <!--   test validator-->
+                 <div class="row">				
+                    <div class="col-xs-12 col-sm-12 col-md-12 mb-3" style="font-size: 12px;">
+                        
+                    </div>
+			    </div>
+                 <div class="row">				
+                    <div class="col-xs-12 col-sm-12 col-md-12 mb-3" style="font-size: 12px;">
+                        <strong class="label label-primary"><span style="color:red;">*</span>Mandatory Fields</strong><br>
+                         By clicking <strong class="label label-primary">Submit</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+                    </div>
+			    </div>
+                <div class="row">
+                    <div class="col-md-5 offset-md-1">
+                         <button id="save" name="save" value="save" class="btn btn-primary btn-lg btn-block mb-4 " style="background-color: rgb(0,116,188);font-size: 18px;" type="submit" >Save and Exit</button>
+                    </div>
+                    
+                    
+                    <div class="col-md-5">
+                        <button id="submit" name="submit" value="submit" class="btn btn-primary btn-lg btn-block mb-4 " style="background-color: rgb(0,116,188);font-size: 18px;" type="submit" >Submit</button>
+<!--                        <button type="button" id="submit" class="btn btn-primary">Sign in or Send</button>-->
+                    </div>
+                </div>
+                
+                
+              </form>              
+            </div>
+        </div>        
+    </div>
+      
+    <!-- Bootstrap vaalidation
+    ================================================== -->
+   
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--    <script>window.jQuery || document.write('<script src="/static/js/jquery-slim.min.js"><\/script>')</script>-->
+    <script src="/static/js/popper.min.js"></script>
+     <script src="/static/js/vindicate.js"></script>
+<!--    <script src="/static/js/bootstrap.min.js"></script>-->
+   
+    <script src="/static/js/holder.min.js"></script>
+    
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+     
+     
+<!--      <script src="/static/js/svd.js"></script>-->
+<!--
+      <script>
+            var settings = {
+              //set id for hiring
+               hiring:"#hiringFunction",
+              //  set #id for validation email
+               emailID: '#email',
+              //  set text for validation email
+               ErrorTextEmail: 'Enter valid email',
+               //  set #id for validation password
+               passwordID: '#inputPassword',
+              //  set text for validation password
+              ErrorTextPassword: 'Must be 7-20 characters long.',
+                //  set value required chars for validation password
+               MinCharsPass: '7',
+               //  set #id for validation custom
+               Custom: '#inputCustom',
+              //  set text for validation password
+              ErrorTextCustom: 'Must be 5-20 characters long custom.',
+               //  set value required chars for validation custom form
+               MinCharsCustom: '5'
+            }
+    </script>
+    
+-->
+   <script src="/static/js/formValidation.js"></script>
+<!--   <script src="/static/js/addbuttons.js"></script>-->
+    <script>
+        $(document).on('click', '.browse', function(){
+          var file = $(this).parent().parent().parent().find('.file');
+          file.trigger('click');
+        });
+
+        function sourceradioCheck()
+                {
+                    const sourceradio = document.querySelector('input[name="source"]:checked').value;
+
+                    if (sourceradio=="Consultant")   
+                    {
+                        document.getElementById('consultant_Name').style.display = 'block';
+                        document.getElementById('employee_Name').style.display = 'none';
+                        document.getElementById('employee_Code').style.display = 'none';
+                        document.getElementById('HR_name').style.display = 'none';
+                        document.getElementById('lineHR_Code').style.display = 'none';
+
+                        $('#HRname').val("");   
+                        $('#employeeName').val("");   
+
+                        $('#employeeName').parents('.form-group').removeClass('has-success');
+                        $('#employeeName').removeClass('form-control-success');  
+
+                        $('#consultantName').parents('.form-group').removeClass('has-success');
+                        $('#consultantName').removeClass('form-control-success');
+
+                        $('#HRname').parents('.form-group').removeClass('has-success');
+                        $('#HRname').removeClass('form-control-success');                
+                    }
+                    if (sourceradio=="Referral")
+                    {
+                        document.getElementById('consultant_Name').style.display = 'none';
+                        document.getElementById('employee_Name').style.display = 'block';
+                        document.getElementById('employee_Code').style.display = 'block';
+                        document.getElementById('HR_name').style.display = 'none';
+                        document.getElementById('lineHR_Code').style.display = 'none';
+
+                        $('#consultantName').val("");
+                        $('#HRname').val("");
+
+                        $('#employeeName').parents('.form-group').removeClass('has-success');
+                        $('#employeeName').removeClass('form-control-success');  
+
+                        $('#consultantName').parents('.form-group').removeClass('has-success');
+                        $('#consultantName').removeClass('form-control-success');   
+
+                        $('#HRname').parents('.form-group').removeClass('has-success');
+                        $('#HRname').removeClass('form-control-success');    
+                    }
+                    else if(sourceradio=="Line HR")
+                    {
+                        document.getElementById('consultant_Name').style.display = 'none';
+                        document.getElementById('employee_Name').style.display = 'none';
+                        document.getElementById('employee_Code').style.display = 'none';
+                        document.getElementById('HR_name').style.display = 'block';
+                        document.getElementById('lineHR_Code').style.display = 'block';
+
+                        $('#employeeName').val("");
+                        $('#consultantName').val("");
+
+                        $('#employeeName').parents('.form-group').removeClass('has-success');
+                        $('#employeeName').removeClass('form-control-success');  
+                        
+                        $('#consultantName').parents('.form-group').removeClass('has-success');
+                        $('#consultantName').removeClass('form-control-success'); 
+
+                        $('#HRname').parents('.form-group').removeClass('has-success');
+                        $('#HRname').removeClass('form-control-success');    
+                    }
+                }
+
+        $(document).ready(function()
+            {
+
+                var settings = {
+              //set #id for hiring
+                source:"#source-radio",
+                hiring:"#hiringFunction",
+                hiringLocation : "#hiringLocation",
+                //set id for RFA 
+                RFA: "#RFHnumber",
+                ErrorTextRFA : "Please enter a valid RFA number.",
+                ErrorTextEmpty : "Cannot be empty",
+                //set #id for consultant name
+                consultantName: "#consultantName",
+                ErrorAlpha : "Please enter only alphabetic characters",
+                ErrorNumeric : "Please enter only numeric characters",
+                ErrorTextRFAConsulantEmpty : "Cannot be empty",
+                ErrorDropdown : "Please choose one.",
+                //set #id for employee name
+                employeeName : "#employeeName",
+                EmployeeCode : "#EmployeeCode",
+                //set #id for HR
+                LineHrName : "#HRname",
+                LineHrCode :"#HRCode",
+                    
+                //candidate details 
+                CandidateName: "#cand_name",
+                DOB : '#DOB',
+                Mobile:"#mobile",
+                ErrorTextMobile:"Please enter a valid phone number.",
+                ErrorTextMobileLength:"Mobile number cannot exceed 10 characters",
+           
+                emailID: '#email',
+                ErrorTextEmail: 'Please enter a valid email address. (email@domain.com)',
+                
+                gender : "#gender-check",
+                ErrorRadio : "Please choose one.",
+                    
+                Address:"#address",
+                ErrorAddressLength:"Address cannot exceed 200 characters.",
+                    
+                Country:"#country", 
+                State:"#state",
+                    
+                ZIP: "#zip",
+                ZipError : "Please enter a valid Zip Code.",
+                ZipErrorLength :"Zip Code cannot exceed six characters.",
+                
+                MaritalStatus:"#maritalStatus",
+                    
+                Dependants:"#dependants",
+                ErrorDependants:"Cannot exceed 100.",
+                
+                Aadhar:"#aadhar",
+                ErrorAadhar :"Please enter a valid Aadhar number.",
+                ErrorAadharLength :"Aadhar cannot exceed 12 characters.",
+                
+                PAN:"#pan",
+                ErrorPan:"Please enter a valid PAN number",
+                ErrorPanLength:"PAN Number cannot exceed 10 characters.",
+                  
+                //work experience details    
+                YearsWorked: "#years",
+                MonthsWorked: "#months",
+                ErrorMonthsLength: "Number of months cannot exceed 12.",                    
+                InsuranceCheck:"#CheckInsurance",
+                ArmyCheck:"#CheckArmy",
+                
+                ErrorYear:"Please enter a valid year.",
+                    
+                //Previous Comapany Details
+                Sector:".",
+                Resume:'#resume',
+                ErrorFileFormat:"Please select a file with valid extensions. (.pdf or .doc or .docx)",
+                ErrorResumeEmpty:"Please select a file."    ,
+               
+               //  set #id for validation password
+               passwordID: '#inputPassword',
+               //  set text for validation password
+               ErrorTextPassword: 'Must be 7-20 characters long.',
+                //  set value required chars for validation password
+               MinCharsPass: '7',
+               //  set #id for validation custom
+               Custom: '#inputCustom',
+               //  set text for validation password
+               ErrorTextCustom: 'Must be 5-20 characters long custom.',
+               //  set value required chars for validation custom form
+               MinCharsCustom: '5'
+                }
+                
+            validate(); //call file formValidation.js            
+            var x = 2    //counter for company add fields
+            var y=2;     //counterfor education add fields
+            var z=1;     //counter for certification add fields
+            
+            var max_fields      = 10; //maximum input boxes allowed
+            var maxqual_fields  = 10;
+            var maxcerti_fields = 10;
+            var companywrapper = $(".companyWrap"); //Fields wrapper
+            var qulaification_wrap = $(".qualification-wrapper"); //Fields wrapper
+            var add_company      = $(".add_company_button"); //Add button ID
+            
+            var add_qualification =$(".add_qualification_button "); //Add button ID
+            var add_certification = $(".add_certification_button "); //Add button ID
+            var remove_certification = $(".remove_certification_button "); //remove button ID
+            var certification_wrap = $(".certification-wrapper"); //Fields wrapper
+            $(document).on('change', '.file', function(){
+              $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+                var resumeFileName= this.value;
+                    
+                    var validFileExtensions = [".pdf", ".doc", ".docx",".png",".jpeg",".jps",".xls"];   
+                    if(resumeFileName)
+                    {
+                        if (resumeFileName.length > 0)
+                        {
+                            var blnValid = false;
+                            for (var j = 0; j < validFileExtensions.length; j++) {
+                                var sCurExtension = validFileExtensions[j];
+                                if (resumeFileName.substr(resumeFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                                    blnValid = true;
+                                    $("#resume").parents('.form-group').addClass('has-success');
+                                    $("#resume").addClass('form-control-success');
+                                    $("#resume").parents('.form-group').removeClass('has-danger');
+                                    $("#resume").removeClass('form-control-danger');
+                                    $("#resume").parents('.form-group').find('.text-muted').css('display', 'none');
+                                    break;
+                                }
+                            }
+                            if (!blnValid) {
+                                
+                                $("#resume").parents('.form-group').addClass('has-danger');
+                                $("#resume").addClass('form-control-danger');
+                                $("#resume").parents('.form-group').find('.text-muted').text(settings.ErrorFileFormat);
+                                $("#resume").parents('.form-group').find('.text-muted').css('display', 'block');
+                            }
+                        }
+                        
+                    }
+                    else{                        
+                        $("#resume").parents('.form-group').removeClass('has-success');
+                        $("#resume").addClass('form-control-success');
+                        $("#resume").parents('.form-group').removeClass('has-danger');
+                        $("#resume").removeClass('form-control-danger');
+                        $("#resume").parents('.form-group').find('.text-muted').css('display', 'none');
+                    }
+            });
+            //on add input button click
+            $(add_company).click(function(e){ 
+                e.preventDefault();
+                if(x < max_fields)
+                { //max input box allowed
+                    //text box increment
+                    $(companywrapper).append('<div class="main_company_wrap"><hr class="mb-4"><div class="row"><div class="col-md-6 mb-1 form-group" id="WorkSector"><label for="sector">Sector<span style="color:red;">*</span></label><select class="custom-select d-block w-100 sel-sector form-control" name="sector[]" id="'+x+'" onchange="getSectorValue(this)"><option value="">Please choose One...</option><option value="Agribusiness">Agribusiness/Food Systems</option><option value="Aviation">Aviation</option><option value="Construction">Construction</option><option value="Financial Institutions" >Financial Institutions </option><option value="Healthcare" >Healthcare</option><option value="Insurance" >Insurance</option><option value="Marine" >Marine</option><option value="Public Sector" >Public Sector</option><option value="Railway">Railway</option><option value="Technology" >Technology</option></select><small class="text-muted"></small></div><div class="col-md-6 mb-1 form-group"  ><label for="subSector">Sub Sector<span style="color:red;">*</span></label><select class="custom-select d-block w-100 sub-sec form-control" name="subSector[]" id="subsectorDropdown'+x+'" disabled ><option value="" selected="selected" >-- select one --</option><option value="Accidental">Accidental</option><option value="Agriculture">Agriculture</option><option value="General" >General</option><option value="Health" >Health</option><option value="Life Insurance" >Life Insurance</option><option value="Travel" >Travel</option><option value="Other" >Other</option></select><small class="text-muted"></small></div></div><div class="row"><div class="col-md-6 mb-1 form-group"><label for="companyName">Company Name<span style="color:red;">*</span></label><input type="text" class="form-control companyName" name="companyName[]" id="CompanyName'+x+'" ><small class="text-muted"></small></div><div class="col-md-6 mb-1 form-group"><label for="designation" >Designation<span style="color:red;">*</span></label><input type="text" class="form-control designationName" name="designation[]" id="Designation'+x+'" ><small class="text-muted"></small></div></div><div class="row"><div class="col-md-6 mb-3 form-group"><label for="startDate">Start Date<span style="color:red;">*</span></label><input type="text" name="startDate[]" id="StartDate'+x+'" placeholder="mm/dd/yyyy"  style="background-color: white;" class="form-control datepicker" readonly /></div><div class="col-md-6 mb-3 form-group"><label for="endDate">End Date<span style="color:red;">*</span></label><input type ="text" name="endDate[]" id="EndDate'+x+'"  placeholder="mm/dd/yyyy"  style="background-color: white;" class="form-control datepicker "  readonly   /><small class="text-muted"></small></div></div><div class="row"><div class="col-md-6 mb-1 form-group"><label for="salary" >Last Annual Drawn Salary<span style="color:red;">*</span></label><input type="text" class="form-control lastSalary" id="salary'+x+'" name="salary[]" placeholder="" value="" ><small class="text-muted"></small></div></div><button class="mt-2 remove_company_button btn btn-outline-danger"><i class="fas fa-minus-circle" style="font-size:20px;"></i>Remove Fields</button> </div> '); //add input box 
+                
+                   
+                        var startdate= "#StartDate" +x;
+                        var enddate= "#EndDate" +x;                       
+                        $(startdate).datepicker({
+                            uiLibrary: 'bootstrap4',
+                            maxDate: new Date()
+                        });
+                        var missingDate="Please choose a date."
+                        $(startdate).datepicker()
+                        .on('change', function(e)
+                        {
+                            var start = new Date($(startdate).val());                           
+                            if(start)
+                            {
+                               $(this).parents('.form-group').addClass('has-success');
+                                $(this).addClass('form-control-success');
+                                $(this).parents('.form-group').removeClass('has-danger');
+                                $(this).removeClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                            }
+                            else
+                            {
+                                $(this).parents('.form-group').addClass('has-danger');
+                                $(this).addClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').text(missingDate);
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                            }
+                            
+                        });
+                       
+                        
+                          
+                        $(enddate).datepicker({uiLibrary: 'bootstrap4',maxDate: new Date()});
+                         $(enddate).datepicker()
+                        .on('change', function(e)
+                        {
+                            var end = new Date($(enddate).val());                            
+                            if(end)
+                            {
+                               $(this).parents('.form-group').addClass('has-success');
+                                $(this).addClass('form-control-success');
+                                $(this).parents('.form-group').removeClass('has-danger');
+                                $(this).removeClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                            }
+                            else
+                            {
+                                $(this).parents('.form-group').addClass('has-danger');
+                                $(this).addClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').text(missingDate);
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                            }
+                            
+                        });
+                        x++;
+                   
+                }
+            });
+            $(companywrapper).on("click",".remove_company_button", function(e){ //user click on remove text
+                e.preventDefault(); $(this).parent('div').remove(); x--;
+            })
+             
+             $(document).on('change', ".sel-sector", function ()
+                {
+                    var sector = document.getElementsByName('sector[]'); // creates an empty Array that's sized for 10 elements
+                   
+                    var subSector = document.getElementsByName('subSector[]');                   
+                    var SectorValue=this.value;
+                    if(SectorValue)
+                    {
+                        if(SectorValue!="Insurance")
+                        {
+                            $(this).parents('.form-group').addClass('has-success');
+                            $(this).addClass('form-control-success');
+                            $(this).parents('.form-group').removeClass('has-danger');
+                            $(this).removeClass('form-control-danger');
+                            $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                            
+                            for (var i = 0; i <sector.length; i++) 
+                            {                                
+                                if(this.id==sector[i].id)
+                                {
+                                    var SubSectorId=subSector[i].id;                                    
+                                    SubSectorId= "\#"+ SubSectorId;
+                                    $(SubSectorId).parents('.form-group').removeClass('has-danger');
+                                    $(SubSectorId).removeClass('form-control-danger');
+                                    $(SubSectorId).parents('.form-group').removeClass('has-success');
+                                    $(SubSectorId).removeClass('form-control-success');
+                                    $(SubSectorId).parents('.form-group').find('.text-muted').css('display', 'none'); 
+                                    $(SubSectorId).val("");
+                                }
+                            }
+                        } 
+                        else{
+                            $(this).parents('.form-group').addClass('has-success');
+                            $(this).addClass('form-control-success');
+                            $(this).parents('.form-group').removeClass('has-danger');
+                            $(this).removeClass('form-control-danger');
+                            $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                        }
+                    }
+                    else
+                    {                        
+                        $(this).parents('.form-group').addClass('has-danger');
+                        $(this).addClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                         for (var i = 0; i <sector.length; i++) 
+                            {                                
+                                if(this.id==sector[i].id)
+                                {
+                                    var SubSectorId=subSector[i].id;                                    
+                                    SubSectorId= "\#"+ SubSectorId;
+                                    $(SubSectorId).parents('.form-group').removeClass('has-danger');
+                                    $(SubSectorId).removeClass('form-control-danger');
+                                    $(SubSectorId).parents('.form-group').removeClass('has-success');
+                                    $(SubSectorId).removeClass('form-control-success');
+                                    $(SubSectorId).parents('.form-group').find('.text-muted').css('display', 'none'); 
+                                    $(SubSectorId).val("");
+                                }
+                            }
+                    }
+                });       
+            
+            //fix this disabled problem
+            $(document).on('change', ".sub-sec", function ()
+            {
+                var SubSectorValue=this.value;
+                if(SubSectorValue)
+                {                        
+                    $(this).parents('.form-group').addClass('has-success');
+                    $(this).addClass('form-control-success');
+                    $(this).parents('.form-group').removeClass('has-danger');
+                    $(this).removeClass('form-control-danger');
+                    $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                }
+                else
+                {                        
+                    $(this).parents('.form-group').addClass('has-danger');
+                    $(this).addClass('form-control-danger');
+                    $(this).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                    $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                }
+            });
+           $(document).on('keyup', ".companyName", function ()
+            {
+                var company = this.value; //extract value  
+                if(company)
+                {
+                    if(isValidName(company))
+                    {
+                        $(this).parents('.form-group').addClass('has-success');
+                        $(this).addClass('form-control-success');
+                        $(this).parents('.form-group').removeClass('has-danger');
+                        $(this).removeClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                    }
+                    else{
+                        $(this).parents('.form-group').addClass('has-danger');
+                        $(this).addClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').text(settings.ErrorAlpha);
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                    }
+                }
+                else{
+                    $(this).parents('.form-group').addClass('has-danger');
+                    $(this).addClass('form-control-danger');
+                    $(this).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                    $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                }                    
+            });
+            $(document).on('keyup', ".designationName", function ()
+            {
+                var designation = this.value; //extract value  
+                if(designation)
+                {
+                    if(isValidName(designation))
+                    {
+                        $(this).parents('.form-group').addClass('has-success');
+                        $(this).addClass('form-control-success');
+                        $(this).parents('.form-group').removeClass('has-danger');
+                        $(this).removeClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                    }
+                    else{
+                        $(this).parents('.form-group').addClass('has-danger');
+                        $(this).addClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').text(settings.ErrorAlpha);
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                    }
+                }
+                else{
+                    $(this).parents('.form-group').addClass('has-danger');
+                    $(this).addClass('form-control-danger');
+                    $(this).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                    $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                }                    
+            });
+            
+            $(document).on('keyup', ".lastSalary", function ()
+            {
+                var lastSalary = this.value; //extract value  
+                if(lastSalary)
+                {
+                    if(isValidCode(lastSalary))
+                    {
+                        $(this).parents('.form-group').addClass('has-success');
+                        $(this).addClass('form-control-success');
+                        $(this).parents('.form-group').removeClass('has-danger');
+                        $(this).removeClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                    }
+                    else{
+                        $(this).parents('.form-group').addClass('has-danger');
+                        $(this).addClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').text(settings.ErrorNumeric);
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                    }
+                }
+                else{
+                    $(this).parents('.form-group').addClass('has-danger');
+                    $(this).addClass('form-control-danger');
+                    $(this).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                    $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                }                    
+            });
+            
+           
+            
+           
+            $(add_qualification).click(function(e){ //on add input button click
+                e.preventDefault();
+                if(y<=maxqual_fields)
+                { //max input box allowed
+                    //text box increment
+                    $(qulaification_wrap).append('<div class="qual-main"><hr class="mb-4"><div class="row"><div class="col-md-6 mb-1 form-group"><label for="sector">What is your educational qualification ?<span style="color:red;">*</span></label><select class="custom-select d-block w-100 sel-qualification form-control" name="qualification[]" id="qualification'+y+'" onchange=""><option value="" selected="selected" disabled="disabled">-- select one --</option><option value="No formal education">No formal education</option><option value="Primary education">Primary education</option><option value="Secondary education">Secondary education or high school</option><option value="GED">GED</option><option value="Vocational qualification">Vocational qualification</option><option value="Bachelors degree"></option><option value="Bachelors degree">Bachelors degree</option><option value="Masterdegree">Masters degree</option><option value="Doctorate or higher">Doctorate or higher</option></select><small class="text-muted"></small></div><div class="col-md-6 mb-1 form-group"><label for="yearOfCompletion">Year of Completion<span style="color:red;">*</span></label><input type="text" class="form-control CompletionYear" name="yearOfCompletion[]" id="yearOfCompletion'+y+'" placeholder="" value="" ><small class="text-muted"></small></div></div><div class="row"><div class="col-md-6 mb-1 form-group"><label for="specialisation">Specialization<span style="color:red;">*</span></label><input type="text" class="form-control Specialisation" name="specialisation[]" id="specialisation'+y+'" placeholder="" value=""><small class="text-muted"></small></div><hr class="mb-4"></div> <button class="mt-2 remove_qualification_button btn btn-outline-danger "><i class="fas fa-minus-circle" style="font-size:20px;"></i>Remove Fields</button> </div>'); 
+                    
+                    
+                    
+                    y++; //counter for fields
+                }
+            });
+
+            $(qulaification_wrap).on("click",".remove_qualification_button", function(e){ //user click on remove text
+               e.preventDefault(); $(this).parent('div').remove(); y--;
+            })
+            $(document).on('change', ".sel-qualification", function ()
+                {
+                    var qualification=this.value;
+                    if(qualification)
+                    {
+                       $(this).parents('.form-group').addClass('has-success');
+                        $(this).addClass('form-control-success');
+                        $(this).parents('.form-group').removeClass('has-danger');
+                        $(this).removeClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                    }
+                    else
+                    {
+                        $(this).parents('.form-group').addClass('has-danger');
+                        $(this).addClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                    }
+                });
+            $(document).on('keyup', ".CompletionYear", function ()
+            {
+                var CompletionYear = this.value; //extract value  
+                
+                if(CompletionYear)
+                {
+                    if(isValidCode(CompletionYear))
+                    {
+                        if(!isValidYear(CompletionYear))
+                            {
+                                $(this).parents('.form-group').addClass('has-danger');
+                                $(this).addClass('form-control-danger');
+                                $(this).parents('.form-group').find('.text-muted').text(settings.ErrorYear);
+                                $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                            }
+                        else{
+                            $(this).parents('.form-group').addClass('has-success');
+                            $(this).addClass('form-control-success');
+                            $(this).parents('.form-group').removeClass('has-danger');
+                            $(this).removeClass('form-control-danger');
+                            $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                        }
+                        
+                    }
+                    else{
+                        $(this).parents('.form-group').addClass('has-danger');
+                        $(this).addClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').text(settings.ErrorNumeric);
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                    }
+                }
+                else{
+                    $(this).parents('.form-group').addClass('has-danger');
+                    $(this).addClass('form-control-danger');
+                    $(this).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                    $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                }                    
+            });
+            
+            $(document).on('keyup', ".Specialisation", function ()
+            {
+                var Specialisation = this.value; //extract value  
+                if(Specialisation)
+                {
+                    if(isValidName(Specialisation))
+                    {
+                        $(this).parents('.form-group').addClass('has-success');
+                        $(this).addClass('form-control-success');
+                        $(this).parents('.form-group').removeClass('has-danger');
+                        $(this).removeClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                    }
+                    else{
+                        $(this).parents('.form-group').addClass('has-danger');
+                        $(this).addClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').text(settings.ErrorAlpha);
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                    }
+                }
+                else{
+                    $(this).parents('.form-group').addClass('has-danger');
+                    $(this).addClass('form-control-danger');
+                    $(this).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                    $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                }                    
+            });
+            
+//            $(add_certification).click(function(e){ //on add input button click
+//                e.preventDefault();
+//               
+//                if(z<maxcerti_fields)
+//                { //max input box allowed
+//                    //text box increment
+//                    $(certification_wrap).append('<div class="certi-wrap-main"><hr class="mb-4"><div class="row"><div class="col-md-6 mb-1"><label for="yearOfCompletionCerti">Have you done any certification?</label><input type="text" class="form-control" name="certification[]" id="certification" placeholder="" value="" required><div class="invalid-feedback">Please input a valid text.</div></div><div class="col-md-6 mb-1"><label for="yearOfCompletionCerti">Year of Completion</label><input type="text" class="form-control" name="yearOfCompletionCerti[]" id="yearOfCompletionCerti" placeholder="" value="" ><div class="invalid-feedback">Please input a valid numeric year.</div></div><div class="col-md-6 mb-1"><label for="specialisationCerti">Specialization</label><input type="text" class="form-control" name="specialisationCerti[]" id="specialisationCerti" placeholder="" value="" ><div class="invalid-feedback">Please input a valid text.</div></div></div><button class="remove_certification_button floar-right ">Remove Field</button></div>'); 
+//                    
+//                    z++; //counter no of fields                  
+//                }
+//            });
+//
+//             $(certification_wrap).on("click",".remove_certification_button", function(e){ //user click on remove text
+//               e.preventDefault(); $(this).parent('div').remove(); z--;
+//            })
+            
+                $(document).on('click','#submit',function(e)
+                {
+                   
+                    var ReferralSource = document.querySelector('input[name="source"]:checked').value;
+                    console.log(ReferralSource);
+                    var RFHnumber = $('#RFHnumber').val();
+                    var ConsultantName =$('#consultantName').val();                
+                    var EmployeeName = $('#employeeName').val();
+                    var EmployeeCode = $('#EmployeeCode').val();
+                    var HRname = $('#HRname').val();
+                    var HRCode = $('#HRCode').val();                
+                    var HiringFunction = $('#hiringFunction').val();
+                    var HiringLocation = $('#hiringLocation').val();
+
+                    //candidate personal info
+                    var CandidateName = $('#cand_name').val();
+                    var CandidateDob = $('#DOB').val();
+
+                    var CandidateEmail = $('#email').val();
+                    if( document.querySelector('input[name="gender"]:checked'))
+                        var CandidateGender= document.querySelector('input[name="gender"]:checked').value;
+                    else 
+                        var CandidateGender="";
+                   
+                    var Address = $('#address').val();
+                    var Mobile = $('#mobile').val();
+                    var Country = $('#country').val();
+                    var State = $('#state').val();
+                    var Zip = $('#zip').val();
+                    var MaritalStatus = $('#maritalStatus').val();
+                    var Dependants = $('#dependants').val();
+                    var Aadhar = $('#aadhar').val();
+                    var Pan = $('#pan').val();
+                    var YearsWorked = $('#years').val();
+                    
+                    var MonthsWorked = $('#months').val();
+                   
+                    if( document.querySelector('input[name="insuranceCheck"]:checked'))
+                        var InsuranceCheck = document.querySelector('input[name="insuranceCheck"]:checked').value;
+                    else
+                        var InsuranceCheck="";                    
+                    
+                    if( document.querySelector('input[name="ArmyCheck"]:checked'))
+                        var ArmyCheck = document.querySelector('input[name="ArmyCheck"]:checked').value;
+                    else
+                        var ArmyCheck="";
+                    
+                    //candidate work details
+                    var sector = document.getElementsByName('sector[]'); // creates an empty Array that's sized for 10 elements
+                    var sectorarr = [];//                
+                    for (var i = 0; i <sector.length; i++) 
+                    {
+                        var inp=sector[i];
+                        sectorarr[i]= inp.value;
+                    }
+
+                    var subSector = document.getElementsByName('subSector[]');
+                    var subSectorarr = [];
+                    for (var i = 0; i <subSector.length; i++) 
+                    {
+                        var input=subSector[i];
+                        subSectorarr[i]= input.value;
+                    }
+
+                    var company = document.getElementsByName('companyName[]');
+                    var companyArr =[];
+                    for (var i = 0; i <company.length; i++) 
+                    {
+                        var input=company[i];
+                        companyArr[i]= input.value;
+                    }
+
+                    var designation = document.getElementsByName('designation[]');
+                    var desginationArr = [];
+                    for (var i = 0; i <designation.length; i++) 
+                    {
+                        var input=designation[i];
+                        desginationArr[i]= input.value;
+                    }
+
+                    var startDate = document.getElementsByName('startDate[]');
+                    var startDateArr= [];                
+                    for (var i = 0; i <startDate.length; i++) 
+                    {
+                        var input=startDate[i];
+                        startDateArr[i]= input.value;
+                    }
+
+                    var endDate = document.getElementsByName('endDate[]');
+                    var endDateArr=[];
+                    for (var i = 0; i <endDate.length; i++) 
+                    {
+                        var input=endDate[i];
+                        endDateArr[i]= input.value;
+                    }
+                    var annualSalary = document.getElementsByName('salary[]');
+                    var annualSalaryArr = [];
+                    for (var i = 0; i <annualSalary.length; i++) 
+                    {
+                        var input=annualSalary[i];
+                        annualSalaryArr[i]= input.value;
+                    }
+                    //qualification details
+                    var qulaification = document.getElementsByName('qualification[]');
+                    var qulaificationArr = [];
+                    for (var i = 0; i <qulaification.length; i++) 
+                    {
+                        var input=qulaification[i];                       
+                        qulaificationArr[i]= input.value;
+                    }
+                    
+                    var qualificationYear = document.getElementsByName('yearOfCompletion[]');
+                    var qualificationYearArr = [];
+                    for (var i = 0; i <qualificationYear.length; i++) 
+                    {
+                        var input=qualificationYear[i];
+                        qualificationYearArr[i]= input.value;
+                    }
+                    var qualSpecialization = document.getElementsByName('specialisation[]');
+                    var qualSpecializationArr = [];
+                    for (var i = 0; i <qualSpecialization.length; i++) 
+                    {
+                        var input=qualSpecialization[i];
+                        qualSpecializationArr[i]= input.value;
+                    }
+                    var resume= $('#resume').val();
+                    
+//                    e.preventDefault();
+                    //check for source validate 
+                    
+                    if(ReferralSource=='Consultant')
+                    {
+                        if(ConsultantName=='')
+                        {
+                            $(settings.consultantName).parents('.form-group').addClass('has-danger');
+                            $(settings.consultantName).addClass('form-control-danger');
+                            $(settings.consultantName).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.consultantName).parents('.form-group').find('.text-muted').css('display', 'block');
+                            e.preventDefault();                            
+                        }                       
+                    }
+                    else if (ReferrralSource="Referral")
+                    {
+                        if(EmployeeName=='')
+                        {
+                            $(settings.employeeName).parents('.form-group').addClass('has-danger');
+                            $(settings.employeeName).addClass('form-control-danger');
+                            $(settings.employeeName).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.employeeName).parents('.form-group').find('.text-muted').css('display', 'block');
+                            e.preventDefault();
+                        }
+                        if(EmployeeCode=='')
+                        {
+                            $(settings.EmployeeCode).parents('.form-group').addClass('has-danger');
+                            $(settings.EmployeeCode).addClass('form-control-danger');
+                            $(settings.EmployeeCode).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.EmployeeCode).parents('.form-group').find('.text-muted').css('display', 'block');
+                            e.preventDefault();
+                        }
+                        
+                    }                       
+                    else if (ReferralSource="Line HR")
+                    {
+                        if(HRname=='')
+                        {
+                            $(settings.LineHrName).parents('.form-group').addClass('has-danger');
+                            $(settings.LineHrName).addClass('form-control-danger');
+                            $(settings.LineHrName).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.LineHrName).parents('.form-group').find('.text-muted').css('display', 'block');
+                            e.preventDefault();
+                        }
+                        if(HRCode=='')
+                        {
+                            $(settings.LineHrCode).parents('.form-group').addClass('has-danger');
+                            $(settings.LineHrCode).addClass('form-control-danger');
+                            $(settings.LineHrCode).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.LineHrCode).parents('.form-group').find('.text-muted').css('display', 'block');
+                            e.preventDefault();
+                        }
+                        
+                    }
+                   
+                    if(!resume)
+                    {   
+                        $("#resume").parents('.form-group').addClass('has-danger');
+                        $("#resume").addClass('form-control-danger');
+                        $("#resume").parents('.form-group').find('.text-muted').text(settings.ErrorResumeEmpty);
+                        $("#resume").parents('.form-group').find('.text-muted').css('display', 'block');
+                        e.preventDefault();
+                    }
+                    
+                    if(sectorarr.length!=0)
+                    {
+                        for(i=0;i<sectorarr.length;i++)
+                        {
+                            if(!sectorarr[i])
+                            {   //                                    
+                                var sectorId=sector[i].id;
+                                sectorId= "\#"+ sectorId; 
+                                $(sectorId).parents('.form-group').addClass('has-danger');
+                                $(sectorId).addClass('form-control-danger');
+                                $(sectorId).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                                $(sectorId).parents('.form-group').find('.text-muted').css('display', 'block');
+                                e.preventDefault();
+                                console.log("got no sector");
+                            } 
+                            if(sectorarr[i]!="Insurance")
+                            {
+                                var SubSectorId=subSector[i].id;                                    
+                                SubSectorId= "\#"+ SubSectorId;                                     
+                                $(SubSectorId).parents('.form-group').removeClass('has-danger');
+                                $(SubSectorId).removeClass('form-control-danger');
+                                $(SubSectorId).parents('.form-group').find('.text-muted').css('display', 'none');
+                            }
+                        }
+                        
+                    }
+                    if(subSectorarr.length!=0)
+                    {
+                        for(i=0;i<subSectorarr.length;i++)
+                        {
+                            if(!subSectorarr[i])
+                            {  
+                                console.log("got no subsector");
+                                
+                                if(sectorarr[i]=="Insurance")    
+                                {
+                                    var SubSectorId=subSector[i].id;
+                                    SubSectorId= "\#"+ SubSectorId; 
+                                    $(SubSectorId).parents('.form-group').addClass('has-danger');
+                                    $(SubSectorId).addClass('form-control-danger');
+                                    $(SubSectorId).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                                    $(SubSectorId).parents('.form-group').find('.text-muted').css('display', 'block');
+                                     e.preventDefault();
+                                } 
+                                else
+                                {
+                                    var SubSectorId=subSector[i].id;
+                                    SubSectorId= "\#"+ SubSectorId;
+                                    $(SubSectorId).parents('.form-group').removeClass('has-danger');
+                                    $(SubSectorId).removeClass('form-control-danger');
+                                    $(SubSectorId).parents('.form-group').find('.text-muted').css('display', 'none');
+                                } 
+                                 
+                            }                                
+                        }
+                        
+                    }
+                    if(companyArr.length!=0)
+                    {
+                        for(i=0;i<companyArr.length;i++)
+                        {
+                            if(!companyArr[i])
+                            {   //                                    
+                                var companyId=company[i].id;
+                                companyId= "\#"+ companyId; 
+                                $(companyId).parents('.form-group').addClass('has-danger');
+                                $(companyId).addClass('form-control-danger');
+                                $(companyId).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                                $(companyId).parents('.form-group').find('.text-muted').css('display', 'block');
+                                 e.preventDefault();
+                                console.log("got no company"+(i+1));
+                            }                                
+                        }
+                    }
+                    if(desginationArr.length!=0)
+                    {
+                        for(i=0;i<desginationArr.length;i++)
+                        {
+                            if(!desginationArr[i])
+                            {   //                                    
+                                var designationId=designation[i].id;
+                                designationId= "\#"+ designationId; 
+                                $(designationId).parents('.form-group').addClass('has-danger');
+                                $(designationId).addClass('form-control-danger');
+                                $(designationId).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                                $(designationId).parents('.form-group').find('.text-muted').css('display', 'block');
+                                 e.preventDefault();
+                                console.log("got no designation"+(i+1));
+                            }                                
+                        }
+                    }
+
+                    if(startDateArr.length!=0)
+                    {
+                        for(i=0;i<startDateArr.length;i++)
+                        {
+                            if(!startDateArr[i])
+                            {   //                                    
+                                var startDateId=startDate[i].id;
+                                startDateId= "\#"+ startDateId;                                     
+                                $(startDateId).parents('.form-group').addClass('has-danger');
+                                $(startDateId).addClass('form-control-danger');
+                                $(startDateId).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                                $(startDateId).parents('.form-group').find('.text-muted').css('display', 'block');
+                                 e.preventDefault();
+                                console.log("got no startdate"+(i+1));
+                            }                                
+                        }
+                    }
+                    if(endDateArr.length!=0)
+                    {
+                        for(i=0;i<endDateArr.length;i++)
+                        {
+                            if(!endDateArr[i])
+                            {   //                                    
+                                var endDateId=endDate[i].id;
+                                endDateId= "\#"+ endDateId;                                     
+                                $(endDateId).parents('.form-group').addClass('has-danger');
+                                $(endDateId).addClass('form-control-danger');
+                                $(endDateId).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                                $(endDateId).parents('.form-group').find('.text-muted').css('display', 'block');
+                                 e.preventDefault();
+                                console.log("got no enddate"+(i+1));
+                            }                                
+                        }
+                    }
+                    if(annualSalaryArr.length!=0)
+                    {
+                        for(i=0;i<annualSalaryArr.length;i++)
+                        {
+                            if(!annualSalaryArr[i])
+                            {   //                                    
+                                var annualSalaryId=annualSalary[i].id;
+                                annualSalaryId= "\#"+ annualSalaryId; 
+                                $(annualSalaryId).parents('.form-group').addClass('has-danger');
+                                $(annualSalaryId).addClass('form-control-danger');
+                                $(annualSalaryId).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                                $(annualSalaryId).parents('.form-group').find('.text-muted').css('display', 'block');
+                                 e.preventDefault();
+                                console.log("got no salary"+(i+1));
+                            }                                
+                        }
+                    }
+
+                    if(qulaificationArr.length!=0)
+                    {
+                        for(i=0;i<qulaificationArr.length;i++)
+                        {
+                            if(!qulaificationArr[i])
+                            {   //                                    
+                                var idQual=qulaification[i].id;
+                                idQual= "\#"+ idQual;                                     
+                                $(idQual).parents('.form-group').addClass('has-danger');
+                                $(idQual).addClass('form-control-danger');
+                                $(idQual).parents('.form-group').find('.text-muted').text(settings.ErrorRadio);
+                                $(idQual).parents('.form-group').find('.text-muted').css('display', 'block');
+//                                 e.preventDefault();
+                                console.log("got no qualification"+(i+1));
+                            }                                
+                        }
+                    }
+
+                    if(qualificationYearArr.length!=0)
+                    {
+                        for(i=0;i<qualificationYearArr.length;i++)
+                        {
+                            if(!qualificationYearArr[i])
+                            {   //                                    
+                                var idQualYear=qualificationYear[i].id;
+                                idQualYear= "\#"+ idQualYear;                                     
+                                $(idQualYear).parents('.form-group').addClass('has-danger');
+                                $(idQualYear).addClass('form-control-danger');
+                                $(idQualYear).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                                $(idQualYear).parents('.form-group').find('.text-muted').css('display', 'block');
+//                                 e.preventDefault();
+                                console.log("got no qualificationyear"+(i+1));
+                            }                                
+                        }
+                    }
+
+                    if(qualSpecializationArr.length!=0)
+                    {
+                        for(i=0;i<qualSpecializationArr.length;i++)
+                        {
+                            if(!qualSpecializationArr[i])
+                            {   //                                    
+                                var idQualSpeacialisation=qualSpecialization[i].id;
+                                idQualSpeacialisation= "\#"+ idQualSpeacialisation;
+                                $(idQualSpeacialisation).parents('.form-group').addClass('has-danger');
+                                $(idQualSpeacialisation).addClass('form-control-danger');
+                                $(idQualSpeacialisation).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                                $(idQualSpeacialisation).parents('.form-group').find('.text-muted').css('display', 'block');
+//                                 e.preventDefault();
+                                console.log("got no specialization"+(i+1));
+                            }                                
+                        }
+                    }
+                     console.log(subSector.length);
+                    if(RFHnumber =='' || HiringFunction==''|| HiringLocation=='' || CandidateName=='' ||CandidateDob==''|| CandidateEmail=='' || CandidateGender==''||Mobile==''||Country==''|| State==''|| Zip==''|| MaritalStatus==''|| Dependants==''|| Aadhar==''|| Pan==''|| (!YearsWorked)|| (!MonthsWorked)|| InsuranceCheck=='' || ArmyCheck=='' )
+                    {
+                        console.log("one of the fields is missing");
+                        if(RFHnumber=='')
+                        {
+                            $(settings.RFA).parents('.form-group').addClass('has-danger');
+                            $(settings.RFA).addClass('form-control-danger');
+                            $(settings.RFA).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.RFA).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(HiringFunction=='' )
+                        {
+                            $(settings.hiring).parents('.form-group').addClass('has-danger');
+                            $(settings.hiring).addClass('form-control-danger');
+                            $(settings.hiring).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                            $(settings.hiring).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(HiringLocation=='' )
+                        {
+                            $(settings.hiringLocation).parents('.form-group').addClass('has-danger');
+                            $(settings.hiringLocation).addClass('form-control-danger');
+                            $(settings.hiringLocation).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                            $(settings.hiringLocation).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(CandidateName=='')
+                        {                            
+                            $(settings.CandidateName).parents('.form-group').addClass('has-danger');
+                            $(settings.CandidateName).addClass('form-control-danger');
+                            $(settings.CandidateName).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.CandidateName).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(CandidateDob=='')
+                        {                            
+                            $(settings.DOB).parents('.form-group').addClass('has-danger');
+                            $(settings.DOB).addClass('form-control-danger');
+                            $(settings.DOB).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.DOB).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(CandidateEmail=='')
+                        {                            
+                            $(settings.emailID).parents('.form-group').addClass('has-danger');
+                            $(settings.emailID).addClass('form-control-danger');
+                            $(settings.emailID).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.emailID).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(CandidateGender=='')
+                        {                            
+                            $(settings.gender).parents('.form-group').addClass('has-danger');
+                            $(settings.gender).addClass('form-control-danger');
+                            $(settings.gender).parents('.form-group').find('.text-muted').text(settings.ErrorRadio);
+                            $(settings.gender).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(Mobile=='')
+                        {                            
+                            $(settings.Mobile).parents('.form-group').addClass('has-danger');
+                            $(settings.Mobile).addClass('form-control-danger');
+                            $(settings.Mobile).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.Mobile).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(Country=='' )
+                        {
+                            $(settings.Country).parents('.form-group').addClass('has-danger');
+                            $(settings.Country).addClass('form-control-danger');
+                            $(settings.Country).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                            $(settings.Country).parents('.form-group').find('.text-muted').css('display', 'block');
+                            
+                            $(settings.State).parents('.form-group').addClass('has-danger');
+                            $(settings.State).addClass('form-control-danger');
+                        }
+                        if(Country!='' && State=='')
+                        {
+                            $(settings.State).parents('.form-group').addClass('has-danger');
+                            $(settings.State).addClass('form-control-danger');
+                            $(settings.State).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                            $(settings.State).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(Zip=='')
+                        {
+                            $(settings.ZIP).parents('.form-group').addClass('has-danger');
+                            $(settings.ZIP).addClass('form-control-danger');
+                            $(settings.ZIP).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.ZIP).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(MaritalStatus=='')
+                        {
+                            $(settings.MaritalStatus).parents('.form-group').addClass('has-danger');
+                            $(settings.MaritalStatus).addClass('form-control-danger');
+                            $(settings.MaritalStatus).parents('.form-group').find('.text-muted').text(settings.ErrorDropdown);
+                            $(settings.MaritalStatus).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(Dependants=='')
+                        {
+                            $(settings.Dependants).parents('.form-group').addClass('has-danger');
+                            $(settings.Dependants).addClass('form-control-danger');
+                            $(settings.Dependants).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.Dependants).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(Aadhar=='')
+                        {
+                            $(settings.Aadhar).parents('.form-group').addClass('has-danger');
+                            $(settings.Aadhar).addClass('form-control-danger');
+                            $(settings.Aadhar).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.Aadhar).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(Pan=='')
+                        {
+                            $(settings.PAN).parents('.form-group').addClass('has-danger');
+                            $(settings.PAN).addClass('form-control-danger');
+                            $(settings.PAN).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.PAN).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(!YearsWorked)
+                        {
+                            $(settings.YearsWorked).parents('.form-group').addClass('has-danger');
+                            $(settings.YearsWorked).addClass('form-control-danger');
+                            $(settings.YearsWorked).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.YearsWorked).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(!MonthsWorked)
+                        {
+                            $(settings.MonthsWorked).parents('.form-group').addClass('has-danger');
+                            $(settings.MonthsWorked).addClass('form-control-danger');
+                            $(settings.MonthsWorked).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.MonthsWorked).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }
+                        if(InsuranceCheck=='')
+                        {      
+                            $(settings.InsuranceCheck).parents('.form-group').addClass('has-danger');
+                            $(settings.InsuranceCheck).addClass('form-control-danger');
+                            $(settings.InsuranceCheck).parents('.form-group').find('.text-muted').text(settings.ErrorRadio);
+                            $(settings.InsuranceCheck).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }       
+                        if(ArmyCheck=='')
+                        {      
+                            $(settings.ArmyCheck).parents('.form-group').addClass('has-danger');
+                            $(settings.ArmyCheck).addClass('form-control-danger');
+                            $(settings.ArmyCheck).parents('.form-group').find('.text-muted').text(settings.ErrorRadio);
+                            $(settings.ArmyCheck).parents('.form-group').find('.text-muted').css('display', 'block');
+                        }     
+                        e.preventDefault();    
+                    }
+                   
+                    else if(RFHnumber && HiringFunction && HiringLocation && CandidateName && CandidateDob && CandidateEmail && CandidateGender && Mobile&&Country && State && Zip && MaritalStatus && Dependants && Aadhar && Pan && YearsWorked && MonthsWorked && InsuranceCheck && ArmyCheck)
+                    {     
+                        console.log("all fields are there now will check for isvalid");
+                        if(!isValidRFA(RFHnumber)||!isValidName(CandidateName)|| !isValidDOB(CandidateDob) || !isValidEmail(CandidateEmail)|| !isValidMobile(Mobile) || !isValidZip(Zip) || !isValidCode(Dependants) ||!isValidAadhar(Aadhar)||  !isValidPan(Pan) || !isValidCode(YearsWorked) || !isValidMonths(MonthsWorked))
+                        {
+                            console.log("invalid");
+                            e.preventDefault();
+                        }
+                        else
+                         {
+                            console.log("everything fine");
+                            $('.form-group').addClass('has-success');
+                            $('.form-control').addClass('form-control-success');                            
+                            for(i =0;i<subSector.length;i++)
+                                {
+                                   y=i+1;
+                                   selectedSubSector='subsectorDropdown'+y;
+                                   document.getElementById(selectedSubSector).disabled=false; 
+                                }
+                            
+                            document.getElementById("candidateForm").action = "/register";
+                         }
+                        
+//                        $("#message").css('display', 'block');
+//                        putdata();
+                    }
+                        
+                });    
+                
+                $(document).on('click','#save',function(e)
+                {
+//                    $('.form-group').removeClass('has-danger');
+//                    $('.form-control').removeClass('form-control-danger');
+//                   
+//                    $('.form-group').removeClass('has-success');
+//                    $('.form-control').removeClass('form-control-success');                    
+//                    $('.form-group').find('.text-muted').css('display', 'none');
+                   
+                    var ReferralSource = document.querySelector('input[name="source"]:checked').value;
+                    var RFHnumber = $('#RFHnumber').val();
+                    var ConsultantName =$('#consultantName').val();                
+                    var EmployeeName = $('#employeeName').val();
+                    var EmployeeCode = $('#EmployeeCode').val();
+                    var HRname = $('#HRname').val();
+                    var HRCode = $('#HRCode').val();                
+                    var HiringFunction = $('#hiringFunction').val();
+                    var HiringLocation = $('#hiringLocation').val();
+
+                    //candidate personal info
+                    var CandidateName = $('#cand_name').val();
+                    var CandidateDob = $('#DOB').val();
+                    var CandidateEmail = $('#email').val();
+                    if( document.querySelector('input[name="gender"]:checked'))
+                        var CandidateGender= document.querySelector('input[name="gender"]:checked').value;
+                    else 
+                        var CandidateGender="";
+                   
+                    var Address = $('#address').val();
+                    var Mobile = $('#mobile').val();
+                    var Country = $('#country').val();
+                    var State = $('#state').val();
+                    var Zip = $('#zip').val();
+                    var MaritalStatus = $('#maritalStatus').val();
+                    var Dependants = $('#dependants').val();
+                    var Aadhar = $('#aadhar').val();
+                    var Pan = $('#pan').val();
+                    var YearsWorked = $('#years').val();
+                    var MonthsWorked = $('#months').val();
+                    if( document.querySelector('input[name="insuranceCheck"]:checked'))
+                        var InsuranceCheck = document.querySelector('input[name="insuranceCheck"]:checked').value;
+                    else
+                        var InsuranceCheck="";
+                    //candidate work details
+                    var sector = document.getElementsByName('sector[]'); // creates an empty Array that's sized for 10 elements
+                    var sectorarr = [];//                
+                    for (var i = 0; i <sector.length; i++) 
+                    {
+                        var inp=sector[i];
+                        sectorarr[i]= inp.value;
+                    }
+
+                    var subSector = document.getElementsByName('subSector[]');                    
+                    var subSectorarr = [];
+                    
+                    for (var i = 0; i <subSector.length; i++) 
+                    {
+                        var input=subSector[i];
+                        subSectorarr[i]= input.value;
+                    }
+
+                    var company = document.getElementsByName('companyName[]');
+                    var companyArr =[];
+                    for (var i = 0; i <company.length; i++) 
+                    {
+                        var input=company[i];
+                        companyArr[i]= input.value;
+                    }
+
+                    var designation = document.getElementsByName('designation[]');
+                    var desginationArr = [];
+                    for (var i = 0; i <designation.length; i++) 
+                    {
+                        var input=designation[i];
+                        desginationArr[i]= input.value;
+                    }
+
+                    var startDate = document.getElementsByName('startDate[]');
+                    var startDateArr= [];                
+                    for (var i = 0; i <startDate.length; i++) 
+                    {
+                        var input=startDate[i];
+                        startDateArr[i]= input.value;
+                    }
+
+                    var endDate = document.getElementsByName('endDate[]');
+                    var endDateArr=[];
+                    for (var i = 0; i <endDate.length; i++) 
+                    {
+                        var input=endDate[i];
+                        endDateArr[i]= input.value;
+                    }
+                    var annualSalary = document.getElementsByName('salary[]');
+                    var annualSalaryArr = [];
+                    for (var i = 0; i <annualSalary.length; i++) 
+                    {
+                        var input=annualSalary[i];
+                        annualSalaryArr[i]= input.value;
+                    }
+
+                    //candidate education details
+                    var qulaification = document.getElementsByName('qualification[]');
+                    var qulaificationArr = [];
+                    for (var i = 0; i <qulaification.length; i++) 
+                    {
+                        var input=qulaification[i];
+                        qulaificationArr[i]= input.value;
+                    }
+                    var qualificationYear = document.getElementsByName('yearOfCompletion[]');
+                    var qualificationYearArr = [];
+                    for (var i = 0; i <qualificationYear.length; i++) 
+                    {
+                        var input=qualificationYear[i];
+                        qualificationYearArr[i]= input.value;
+                    }
+                    var qualSpecialization = document.getElementsByName('specialisation[]');
+                    var qualSpecializationArr = [];
+                    for (var i = 0; i <qualSpecialization.length; i++) 
+                    {
+                        var input=qualSpecialization[i];
+                        qualSpecializationArr[i]= input.value;
+                    }
+                    var resume= $('#resume').val();
+//                    e.preventDefault();
+//                  
+                    if(CandidateEmail=='' || Mobile=='' || Aadhar=='' )
+                    {                       
+                        if(CandidateEmail=='' )
+                        {
+                            $(settings.emailID).parents('.form-group').addClass('has-danger');
+                            $(settings.emailID).addClass('form-control-danger');
+                            $(settings.emailID).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.emailID).parents('.form-group').find('.text-muted').css('display', 'block');
+                             
+                        }
+                        if(Mobile=='')
+                        {                            
+                            $(settings.Mobile).parents('.form-group').addClass('has-danger');
+                            $(settings.Mobile).addClass('form-control-danger');
+                            $(settings.Mobile).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.Mobile).parents('.form-group').find('.text-muted').css('display', 'block');
+                            
+                        }
+                        if(Aadhar=='')
+                        {
+                            $(settings.Aadhar).parents('.form-group').addClass('has-danger');
+                            $(settings.Aadhar).addClass('form-control-danger');
+                            $(settings.Aadhar).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmpty);
+                            $(settings.Aadhar).parents('.form-group').find('.text-muted').css('display', 'block');                            
+                        }   
+                         e.preventDefault();   
+                    }
+                    else
+                    {
+                        if(isValidAadhar(Aadhar))
+                        {
+                            $(settings.Aadhar).parents('.form-group').addClass('has-success');
+                            $(settings.Aadhar).addClass('form-control-success');
+                            $(settings.Aadhar).parents('.form-group').find('.text-muted').css('display', 'none');     
+                        }
+                        if(isValidEmail(CandidateEmail))
+                        {
+                            $(settings.emailID).parents('.form-group').addClass('has-success');
+                            $(settings.emailID).addClass('form-control-success');
+                            $(settings.emailID).parents('.form-group').find('.text-muted').css('display', 'none');
+                        }
+                        if(isValidMobile(Mobile))
+                        {
+                            $(settings.Mobile).parents('.form-group').addClass('has-success');
+                            $(settings.Mobile).addClass('form-control-success');
+                            $(settings.Mobile).parents('.form-group').find('.text-muted').css('display', 'none');
+                        }                        
+                        if(isValidAadhar(Aadhar) && isValidEmail(CandidateEmail) && isValidMobile(Mobile))
+                            {
+                                
+                                $('.form-group').addClass('has-success');
+                                $('.form-control').addClass('form-control-success');
+                                for(i =0;i<subSector.length;i++)
+                                {
+                                   y=i+1;
+                                   selectedSubSector='subsectorDropdown'+y;
+                                   document.getElementById(selectedSubSector).disabled=false; 
+                                }
+                                document.getElementById("candidateForm").action = "/register";
+//                                $("#message").css('display', 'block');
+//                                window.location.href = '/register';
+                            }
+                        else{
+                            e.preventDefault();   
+                            if(!isValidEmail(CandidateEmail))
+                            {
+                                $(settings.emailID).parents('.form-group').addClass('has-danger');
+                                $(settings.emailID).addClass('form-control-danger');
+                                $(settings.emailID).parents('.form-group').find('.text-muted').text(settings.ErrorTextEmail);
+                                $(settings.emailID).parents('.form-group').find('.text-muted').css('display', 'block');
+
+                            }
+                            if(!isValidMobile(Mobile))
+                            {                            
+                                $(settings.Mobile).parents('.form-group').addClass('has-danger');
+                                $(settings.Mobile).addClass('form-control-danger');
+                                $(settings.Mobile).parents('.form-group').find('.text-muted').text(settings.ErrorTextMobile);
+                                $(settings.Mobile).parents('.form-group').find('.text-muted').css('display', 'block');
+
+                            }
+                            if(!isValidAadhar(Aadhar))
+                            {
+                                $(settings.Aadhar).parents('.form-group').addClass('has-danger');
+                                $(settings.Aadhar).addClass('form-control-danger');
+                                $(settings.Aadhar).parents('.form-group').find('.text-muted').text(settings.ErrorAadhar);
+                                $(settings.Aadhar).parents('.form-group').find('.text-muted').css('display', 'block');                            
+                            }   
+                        }
+                       
+//                        putdata();
+                    }
+                      
+                }); 
+        
+            
+                
+            //save data
+            function saveData()
+            {                
+                //source details
+                var source = document.querySelector('input[name="source"]:checked').value;
+                var rhf_number = $('#RFHnumber').val();
+                var consultant_name =$('#consultantName').val();                
+                var emp_name = $('#employeeName').val();
+                var emp_code = $('#EmployeeCode').val();
+                var hr_name = $('#HRname').val();
+                var hr_code = $('#HRCode').val();                
+                var hiring_func = $('#hiringFunction').val();
+                var hiring_location = $('#hiringLocation').val();
+              
+                //candidate personal info
+                var cand_name = $('#cand_name').val();
+                var cand_dob = $('#DOB').val();
+               
+                var cand_email = $('#email').val();                
+                if( document.querySelector('input[name="gender"]:checked'))
+                    var cand_gender= document.querySelector('input[name="gender"]:checked').value;
+                else 
+                    var cand_gender="";
+                
+                var address = $('#address').val();
+                var mobile = $('#mobile').val();
+                var country = $('#country').val();
+                var state = $('#state').val();
+                var zip = $('#zip').val();
+                var maritalStatus = $('#maritalStatus').val();
+                var dependants = $('#dependants').val();
+                var aadhar = $('#aadhar').val();
+                var pan = $('#pan').val();
+                var yearsWorked = $('#years').val();
+                var monthsWorked = $('#months').val();
+                
+                if( document.querySelector('input[name="insuranceCheck"]:checked'))
+                    var insuranceCheck = document.querySelector('input[name="insuranceCheck"]:checked').value;
+                else
+                    var insuranceCheck="";            
+                
+                if( document.querySelector('input[name="ArmyCheck"]:checked'))
+                        var ArmyCheck = document.querySelector('input[name="ArmyCheck"]:checked').value;
+                    else
+                        var ArmyCheck="";
+                
+                //candidate work details
+                var sector = document.getElementsByName('sector[]'); // creates an empty Array that's sized for 10 elements
+                var sectorarr = [];//                
+                for (var i = 0; i <sector.length; i++) 
+                {
+                    var inp=sector[i];
+                    sectorarr[i]= inp.value;
+                }
+                
+                var subSector = document.getElementsByName('subSector[]');
+                var subSectorarr = [];
+                for (var i = 0; i <subSector.length; i++) 
+                {
+                    var input=subSector[i];
+                    subSectorarr[i]= input.value;
+                }
+                
+                var company = document.getElementsByName('companyName[]');
+                var companyArr =[];
+                for (var i = 0; i <company.length; i++) 
+                {
+                    var input=company[i];
+                    companyArr[i]= input.value;
+                }
+                
+                var designation = document.getElementsByName('designation[]');
+                var desginationArr = [];
+                for (var i = 0; i <designation.length; i++) 
+                {
+                    var input=designation[i];
+                    desginationArr[i]= input.value;
+                }
+                
+                var startDate = document.getElementsByName('startDate[]');
+                var startDateArr= [];                
+                for (var i = 0; i <startDate.length; i++) 
+                {
+                    var input=startDate[i];
+                    startDateArr[i]= input.value;
+                }
+                
+                var endDate = document.getElementsByName('endDate[]');
+                var endDateArr=[];
+                for (var i = 0; i <endDate.length; i++) 
+                {
+                    var input=endDate[i];
+                    endDateArr[i]= input.value;
+                }
+                var annualSalary = document.getElementsByName('salary[]');
+                var annualSalaryArr = [];
+                for (var i = 0; i <annualSalary.length; i++) 
+                {
+                    var input=annualSalary[i];
+                    annualSalaryArr[i]= input.value;
+                }
+                
+                //candidate education details
+                var qulaification = document.getElementsByName('qualification[]');
+                var qulaificationArr = [];
+                for (var i = 0; i <qulaification.length; i++) 
+                {
+                    var input=qulaification[i];
+                    qulaificationArr[i]= input.value;
+                }
+                var qualificationYear = document.getElementsByName('yearOfCompletion[]');
+                var qualificationYearArr = [];
+                for (var i = 0; i <qualificationYear.length; i++) 
+                {
+                    var input=qualificationYear[i];
+                    qualificationYearArr[i]= input.value;
+                }
+                var qualSpecialization = document.getElementsByName('specialisation[]');
+                var qualSpecializationArr = [];
+                for (var i = 0; i <qualSpecialization.length; i++) 
+                {
+                    var input=qualSpecialization[i];
+                    qualSpecializationArr[i]= input.value;
+                }
+                var resume= $('#resume').val();
+                
+                //candidate certification details
+//                var certification = document.getElementsByName('certification[]');
+//                var certificationArr = [];
+//                for (var i = 0; i <certification.length; i++) 
+//                {
+//                    var input=certification[i];
+//                    certificationArr[i]= input.value;
+//                }
+//                
+//                var certificationYear = document.getElementsByName('yearOfCompletionCerti[]');
+//                var certificationYearArr = [];
+//                for (var i = 0; i <certificationYear.length; i++) 
+//                {
+//                    var input=certificationYear[i];
+//                    certificationYearArr[i]= input.value;
+//                }
+//                
+//                var certiSpecialization = document.getElementsByName('specialisationCerti[]');
+//                var certiSpecializationArr = [];
+//                for (var i = 0; i <certiSpecialization.length; i++) 
+//                {
+//                    var input=certiSpecialization[i];
+//                    certiSpecializationArr[i]= input.value;
+//                }
+              
+                $.ajax({
+                        url: "/save",
+                        dataType: "json", 
+                        async:false,
+                        data:JSON.stringify( {'source':source,'RFHnumber':rhf_number,'ConsultantName':consultant_name,'employeeName':emp_name,'employeeCode':emp_code,'HRname':hr_name,'HRcode':hr_code,'hiringFunction':hiring_func,'hiringLocation':hiring_location,'name':cand_name,'DOB':cand_dob,'email':cand_email,'gender':cand_gender,'address':address,'mobile':mobile,'country':country,'state':state,'ZIP':zip,'maritalStatus':maritalStatus,'dependants':dependants,'aadhar':aadhar,'pan':pan,'yearsWorked':yearsWorked,'monthsWorked':monthsWorked,'insuranceCheck':insuranceCheck,'sector':sectorarr,'subSector':subSectorarr,'company':companyArr,'designation':desginationArr,'startDate':startDateArr,'endDate':endDateArr,'annualSalary':annualSalaryArr,'qualification':qulaificationArr,'qualificationYear':qualificationYearArr,'qualSpecialization': qualSpecializationArr} ),
+                        type: "POST",
+                        success: function(response) {
+
+                            console.log("Success");
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                    });
+            }
+            
+            //put data            
+            
+            }); 
+        function isValidRFA(RFA)
+        {
+            if(RFA.length==16)
+            {
+                 var pattern = new RegExp(/^[a-zA-z]{3}[\/][0-9]{6}[\/][0-9]{2}[\-][0-9]{2}$/);
+ 		         return pattern.test(RFA);
+            }          
+        }
+        function isValidName(name)
+        {
+                 var pattern = new RegExp(/^[a-zA-Z]+/);
+ 		         return pattern.test(name);       
+        }
+        function isValidCode(code)
+        {
+            var pattern = new RegExp(/^\d+$/);
+ 		     return pattern.test(code);               
+        }
+        function isValidEmail(email)
+        {
+             var pattern = new RegExp(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/);
+ 		     return pattern.test(email); 
+        }
+        function isValidMobile(mobile)
+        {
+             var pattern = new RegExp(/^[789]\d{9}$/);
+ 		     return pattern.test(mobile); 
+        }
+        function isValidZip(zip)
+        {
+             var pattern = new RegExp(/^[1-9][0-9]{5}$/);
+ 		     return pattern.test(zip); 
+        }
+        function isValidAadhar(Aadhar)
+        {
+             var pattern = new RegExp(/\d{4}\d{4}\d{4}/);
+ 		     return pattern.test(Aadhar); 
+        }
+        function isValidPan(pan)
+        {
+             var pattern = new RegExp(/[a-zA-z]{5}\d{4}[a-zA-Z]{1}/);
+ 		     return pattern.test(pan); 
+        }
+        
+        function isValidYear(year)
+        {
+            var currentDate = new Date();
+            var currentYear = currentDate.getFullYear();
+            if(currentYear<year)
+            {
+                return false;
+            }
+            else
+            {
+                 var pattern = new RegExp(/^(19|20)\d{2}$/);
+ 		         return pattern.test(year);                    
+            }
+        }
+        function isValidMonths(months)
+        {
+            var pattern = new RegExp(/^\d+$/);
+            if(pattern.test(months))
+            {
+                if(months>12)
+                    return false;
+                else
+                    return true;
+            }
+            else
+                return false;
+        }
+        function isValidDOB(CandidateDob)
+        {
+            var mydate = new Date(CandidateDob);
+            var dobMonth=mydate.getMonth()+1;
+            var dobDay= mydate.getDate();
+            var dobYear = mydate.getFullYear();
+
+            var currentDate = new Date();
+            var currentMonth = currentDate.getMonth()+1;
+            var currrentDay =  currentDate.getDate();
+            var currentYear = currentDate.getFullYear();
+            var age = currentYear - dobYear;
+            var m = currentMonth - dobMonth;
+            if (m < 0 || (m === 0 && currrentDay < dobDay)) {
+                age--;
+            }
+
+            if(age>=18)
+            {
+               return true;
+            }
+            else
+            {
+               return false;
+            }
+        }
+    </script>
+ 
+        
+    <script>  
+        function getSectorValue(sector){
+          
+            selectedValue= sector.value; 
+            console.log(selectedValue);
+            
+            selectedSubSector='subsectorDropdown'+sector.id;
+            if(selectedValue=="Insurance")
+                document.getElementById(selectedSubSector).disabled=false;
+            else
+            {
+                document.getElementById(selectedSubSector).disabled=true;  
+            }
+                
+        }
+    </script>
+   
+    
+</body>
+</html>

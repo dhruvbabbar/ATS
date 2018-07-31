@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    
+    <!-- Bootstrap core CSS -->
+     <link rel="stylesheet" href="/static/css/bootstrap.min.css" crossorigin="anonymous">
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">-->
+   
+    <!-- Custom styles  -->
+    <link rel="stylesheet" href="/static/css/index2.css">
+
+<!--        <link href="form-validation.css" rel="stylesheet">-->
+    
+    <!--JS Scripts-->
+<!--    date-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
+
+    <script src="/static/js/country.js" type="text/javascript"></script>
+<!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
+
+     
+    
+</head>
+<body class="" style="background-color:rgba(0,116,188,.7);" >
+   
+   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-grey border-bottom box-shadow" style="background-color: white">
+      <img class="my-2 mr-md-auto font-weight-normal col-md-3" src="/static/img/DHFLPramericaLogo.png" >
+      <nav class="my-2 my-md-0 mr-md-3">
+       <a class="btn btn-outline-primary" href="/">New Form</a>
+        
+        
+      </nav>
+      
+    </div>
+    
+    <hr/>
+    
+    <div class="container mb-5 " style="border: 8px solid  rgba(227,30,36) ;box-shadow: 0px 80px 80px rgba(227,30,36,.1); background-color: white">
+        <div class="py-1 mt-3 text-center">           
+            <h2>Candidate Validate</h2>    
+        </div>
+
+        <div class="row container">
+            <div class="col-md-8 order-md-1 offset-md-2" >
+              <hr class="mb-4">   
+              <h4 class="mb-3">Enter Your Unique ID</h4>
+              <form id="basicfeedback_validation" method="post">
+                <div class="row">
+                  <div class="col-md-6 mb-3 form-group">
+                   
+                    <input type="text" class="form-control candidateID" id="cand_id" name ="cand_id" placeholder="" value="" data->
+                     <small class="text-muted"></small>
+                    <span id="id_error" style="display: none;color:red;">The entered ID does not exist.</span>
+                  </div>
+                    <div class="col-md-3" >
+                       
+                         <button id="submit" class="btn btn-primary btn-md btn-block mb-4 " style="background-color: rgb(0,116,188);font-size: 18px;" type="button" href="resume"  >Resume</button>
+                    </div> 
+                    
+                </div>  
+                
+               
+              </form>    
+<!--
+              <form id="basicfeedback" method="post">
+           
+              <div class="form-group col-md-6">
+                <label>Full Name</label>
+                <input type="text" class="form-control" id="cand_id" name ="cand_id" placeholder="" value="" data-vindicate="required|format:numeric">
+                     <small class="form-control-feedback"></small>
+              </div>
+              
+              <button class="btn btn-primary btn-block" type="button" onclick="submitBasicFeedback()">Validate</button>
+            
+          </form>          
+-->
+            </div>
+        </div>        
+    </div>
+      
+    <!-- Bootstrap vaalidation
+    ================================================== -->
+     <script src="/static/js/popper.min.js"></script>
+     <script src="/static/js/vindicate.js"></script>
+<!--    <script src="/static/js/bootstrap.min.js"></script>-->
+   
+    <script src="/static/js/holder.min.js"></script>
+    
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+     
+    <script>
+             var settings={
+                    ID: "#zip",
+                    IDError : "Please enter a valid Candidate ID.",
+                    IDempty:"This field cannot be empty."
+                }
+             function isValidID(id)
+                {
+                    var pattern = new RegExp(/^[a-zA-z]{3}[0-9]{7}$/);
+                     return pattern.test(id);               
+                }
+            $(document).ready(function()
+            {
+               
+                $(document).on('keyup', ".candidateID", function ()
+                {
+                    this.value = this.value.toUpperCase();
+                    var ID = this.value; //extract value  
+                    console.log(isValidID(ID));
+                    if(ID)
+                    {
+                        if(isValidID(ID))
+                        {
+                            $(this).parents('.form-group').addClass('has-success');
+                            $(this).addClass('form-control-success');
+                            $(this).parents('.form-group').removeClass('has-danger');
+                            $(this).removeClass('form-control-danger');
+                            $(this).parents('.form-group').find('.text-muted').css('display', 'none');
+                             document.getElementById('id_error').style.display = 'none';
+                        }
+                        else{
+                            $(this).parents('.form-group').addClass('has-danger');
+                            $(this).addClass('form-control-danger');
+                            $(this).parents('.form-group').find('.text-muted').text(settings.IDError);
+                            $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                            document.getElementById('id_error').style.display = 'none';
+                        }
+                    }
+                    else{
+                        $(this).parents('.form-group').addClass('has-danger');
+                        $(this).addClass('form-control-danger');
+                        $(this).parents('.form-group').find('.text-muted').text(settings.IDempty);
+                        $(this).parents('.form-group').find('.text-muted').css('display', 'block');
+                        document.getElementById('id_error').style.display = 'none';
+                    }                    
+                });
+                
+            });
+            $(document).off().on('click','#submit',function(e){
+
+                 e.preventDefault();
+                 var ErrorSubmission= "This id is already submitted";
+              
+                id=$('#cand_id').val();
+                
+                if(id!="")
+                    {
+                         console.log(isValidID(id));
+                        
+                         $.ajax({
+                            url: "/resume",
+                            dataType: "json", 
+                            async:false,
+                            data:JSON.stringify( {'CandidateID':id} ),
+                            type: "POST",
+                            success: function(response) {
+                                if(response.status == 'OK')
+                                    {                                         
+                                         document.getElementById('id_error').style.display = 'none';
+                                         if(response.formStatus=='Saved')
+                                         {
+                                            window.location.href = '/candidateFormResume/'+id;
+                                         }
+                                         else if (response.formStatus=='Submitted')
+                                         {
+                                            $('#cand_id').parents('.form-group').addClass('has-danger');
+                                            $('#cand_id').addClass('form-control-danger');
+                                            $('#cand_id').parents('.form-group').find('.text-muted').text(ErrorSubmission);
+                                            $('#cand_id').parents('.form-group').find('.text-muted').css('display', 'block');     
+                                         }
+//                                         getResumeId(id);
+                                        
+                                    }
+                                
+                                    else if (response.status == "NOT")
+                                    {
+                                            $('#cand_id').parents('.form-group').addClass('has-danger');
+                                            $('#cand_id').addClass('form-control-danger');
+                                           
+                                            $('#cand_id').parents('.form-group').find('.text-muted').css('display', 'block');     
+                                            document.getElementById('id_error').style.display = 'block';
+                                    }
+                                   
+//                                else if (response.status ="NOT"){
+//                                    console.log(response.status);
+//                                }
+                                
+                            },
+                            error: function(error) {
+                                console.log(error);
+                                }
+                        });
+                    }
+                
+            });   
+    </script>
+    
+   
+
+    
+   
+   
+    
+</body>
+</html>

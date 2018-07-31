@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#candidate {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    font-size: 12px;
+}
+
+#candidate td, #candidate th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#candidate tr:nth-child(even){background-color: #f2f2f2;}
+
+#candidate tr:hover {background-color: #ddd;}
+
+#candidate th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: deepskyblue;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<p>Dear {{name}},</p>
+<p>Thank you for creating your profile. Your Unique ID is : <b>{{mobile}}</b> </p>
+
+<table id="candidate">
+    <tr>
+      <th >Candidate Name</th>
+      <th>Referral Source</th>
+      <th >Hiring Location</th>
+      <th >Aadhar Number</th>
+      <th >Profile Score</th>
+    </tr>
+    <tr>
+      <td>{{name}}</td>
+      <td>{{source}}</td>
+      <td>{{hiringLocation}}</td>
+      <td>{{aadhar}}</td>
+      <td>{{score}}</td>
+    </tr>  
+</table>
+<p>Regards,<br>
+DPLI Team</p>
+</body>
+</html>
